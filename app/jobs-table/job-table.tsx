@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from "react"
-import { Job, columns } from "./columns" 
+import { Job, getColumns } from "./columns" 
 import { DataTable } from "./data-table" 
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -44,6 +44,8 @@ export default function JenkinsDetailsForm() {
     });
     const [jobs, setJobs] = useState<Job[]>([])
     const [editing, setEditing] = useState<boolean>(false);
+
+    const columns = getColumns(jenkinsDetails);
 
     const handleSave = async () => {
        
